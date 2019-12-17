@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<title>Sarkari Print</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'main.css'  %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<body class="sarkariprintlight-grey">
+     <div class="sarkariprintrow-padding" style="margin:0 -16px">
+     <div class="sarkariprinthalf">		
+	 <a href="{% url 'result' %}">
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Result</li>		
+          </ul>
+		   </a>
+        </div>
+       		
+        <div class="sarkariprinthalf">	
+		<a href="{% url 'admit' %}">		
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Admit Card</li>          
+          </ul>
+		  </a>
+        </div>
+		   
+			<div class="sarkariprinthalf  sarkariprintmargin-bottom">
+ <a href="{% url 'post_list' %}">			
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Latest Jobs</li>  
+            </ul>
+			</a>
+        </div>		
+      </div>
+	       <div class="sarkariprintrow-padding" style="margin:0 -16px">
+        <div class="sarkariprinthalf">		
+		<a href="{% url 'important' %}">
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Important Form</li>
+		</a>
+          </ul>
+        </div>
+        
+        <div class="sarkariprinthalf">	
+          <a href="{% url 'admission' %}">		
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Admission</li>  
+             </ul>
+			 </a>
+        </div>
+		        <div class="sarkariprinthalf  sarkariprintmargin-bottom">	
+ <a href="{% url 'answer' %}">					
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Syllabus/Answer Key</li>          
+          </ul>
+		  </a>
+        </div>
+      </div>
+	<div class="container">
+     		
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            
+ <li class="sarkariprintlight-grey sarkariprintpadding-24">
+<button class="sarkariprintbutton sarkariprintwhite sarkariprintpadding-large"><a href="/result/">CCC Online</a></button>
+<button class="sarkariprintbutton sarkariprintwhite sarkariprintpadding-large"><a href="/result/">UPTET 2019</a></button>
+<button class="sarkariprintbutton sarkariprintwhite sarkariprintpadding-large"><a href="/result/">UPSC CDS-I </a></button>
+<button class="sarkariprintbutton sarkariprintwhite sarkariprintpadding-large"><a href="/result/">SSC CGL-19</a></button>
+<button class="sarkariprintbutton sarkariprintwhite sarkariprintpadding-large"><a href="/result/">Navy MR-20</a></button>
+<button class="sarkariprintbutton sarkariprintwhite sarkariprintpadding-large"><a href="/result/">UP Board List</a></button>
+<button class="sarkariprintbutton sarkariprintwhite sarkariprintpadding-large"><a href="/result/">PanCard </a></button>
+<button class="sarkariprintbutton sarkariprintwhite sarkariprintpadding-large"><a href="/result/">CCC Online</a></button>
+	  <marquee behavior="slide"  bgcolor="#fea517"  scrolldelay="85" direction="left"><a href="{% url 'post_list' %}"><b>Latest Jobs</b></a> <i class="fa fa-dot-circle-o" ></i>  {% for post in posts %}
+		</a><a href="{% url 'post_detail' pk=post.pk %}">{{ post.job }}</a> <i class="fa fa-dot-circle-o" ></i> 
+		{% endfor %}</marquee>
+<marquee behavior="alternate" bgcolor="" scrollamount="3" direction="right"><a href="{% url 'result' %}"><b>Latest Result</b></a> <i class="fa fa-dot-circle-o" ></i>  {% for post in result %}
+      <a href="{% url 'result_detail' pk=post.pk %}">{{ post.resultdetails }}</a> <i class="fa fa-dot-circle-o" ></i> 
+			{% endfor %}   </marquee>
+
+	 <marquee behavior="slide" bgcolor="#1a840a" direction="left"><a href="{% url 'admit' %}"><b>Latest Admit Card</b></a> <i class="fa fa-dot-circle-o" ></i>    {% for post in admit %}
+		</a><a href="{% url 'admit_detail' pk=post.pk %}">{{ post.admitdetails }} <i class="fa fa-dot-circle-o" ></i> </a> 
+		{% endfor %}</marquee>	
+            </li>
+          </ul>
+        </div>
+<div class="sarkariprintoverlay sarkariprintanimate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<div class="sarkariprintmain sarkariprintcontent" style="max-width:1600px;">
+ <div class="sarkariprintcontainer sarkariprintdark-grey sarkariprintcenter sarkariprinttext-light-grey sarkariprintpadding-32" id="about">
+    <div class="sarkariprintcontent sarkariprintjustify" ">
+<center><h2><b>Sarkari Print</b></h2></center>
+      <hr class="sarkariprintopacity">
+
+  
+      <div class="sarkariprintrow-padding" style="margin:0 -16px">
+        <div class="sarkariprinthalf sarkariprintmargin-bottom">		
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Result</li>
+			    {% for post in result %}
+      	<li class="sarkariprintpadding-16"><a href="{% url 'result_detail' pk=post.pk %}">{{ post.resultdetails }}</a>
+		<span style="float:right;margin:auto auto;">
+		<a href="javascript: w=window.open('media/{{ post.screnshot }}'); w.print();">
+		<i class="fa fa-print" aria-hidden="true""></i></a></span></li>
+			{% endfor %}           
+            <li class="sarkariprintlight-grey sarkariprintpadding-24">
+          <button class="sarkariprintbutton sarkariprintwhite sarkariprintpadding-large"><a href="{% url 'result' %}">View More</a></button>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="sarkariprinthalf">		
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32"><a href="{% url 'admit' %}">Admit Card</a></li>  
+        {% for post in admit %}
+		<li class="sarkariprintpadding-16"><a href="{% url 'admit_detail' pk=post.pk %}">{{ post.admitdetails }}</a>
+		<span style="float:right;margin:auto auto;">
+		<a href="javascript: w=window.open('media/{{ post.screnshot }}'); w.print();">
+		<i class="fa fa-print" aria-hidden="true""></i></a></span>
+		</li>
+		
+		{% endfor %}        
+            <li class="sarkariprintlight-grey sarkariprintpadding-24">
+              <button class="sarkariprintbutton sarkariprintwhite sarkariprintpadding-large"><a href="{% url 'admit' %}">View More</a></button>
+            </li>
+          </ul>
+        </div>
+		        <div class="sarkariprinthalf">		
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32"><a href="{% url 'post_list' %}">Latest Jobs</a></li>  
+        {% for post in posts %}
+		<li class="sarkariprintpadding-16"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.job }}</a>
+		<span style="float:right;margin:auto auto;">
+		<a href="javascript: w=window.open('media/{{ post.screnshot }}'); w.print();">
+		<i class="fa fa-print" aria-hidden="true""></i></a></span></li>
+		
+		{% endfor %}          
+            <li class="sarkariprintlight-grey sarkariprintpadding-24">
+              <button class="sarkariprintbutton sarkariprintwhite sarkariprintpadding-large"><a href="{% url 'post_list' %}">View More</a></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+	  <br><br>
+   <div class="sarkariprintrow-padding" style="margin:0 -16px">
+        <div class="sarkariprinthalf sarkariprintmargin-bottom">		
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Syllabus/Answer Key</li>
+      {% for post in answer %}
+		<li class="sarkariprintpadding-16"><a href="{% url 'answer_detail' pk=post.pk %}">{{ post.answeredetails }}</a>
+		<span style="float:right;margin:auto auto;">
+		<a href="javascript: w=window.open('media/{{ post.screnshot }}'); w.print();">
+		<i class="fa fa-print" aria-hidden="true""></i></a></span></li>
+		{% endfor %}
+            <li class="sarkariprintlight-grey sarkariprintpadding-24">
+                 <button class="sarkariprintbutton sarkariprintwhite sarkariprintpadding-large"><a href="{% url 'answer' %}">View More</a></button>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="sarkariprinthalf">		
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Admission</li>  
+        {% for post in admission %}
+		<li class="sarkariprintpadding-16"><a href="{% url 'admission_detail' pk=post.pk %}">{{ post.importantlinkdetails }}</a>
+	<span style="float:right;margin:auto auto;">
+		<a href="javascript: w=window.open('media/{{ post.screnshot }}'); w.print();">
+		<i class="fa fa-print" aria-hidden="true""></i></a></span></li>
+		{% endfor %}
+            <li class="sarkariprintlight-grey sarkariprintpadding-24">
+           <button class="sarkariprintbutton sarkariprintwhite sarkariprintpadding-large"><a href="{% url 'admission' %}">View More</a></button>
+            </li>
+          </ul>
+        </div>
+		        <div class="sarkariprinthalf">		
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Important Form</li>  
+          {% for post in important %}
+		<li class="sarkariprintpadding-16"><a href="{% url 'important_detail' pk=post.pk %}">{{ post.importantlinkdetails }}</a>
+	<span style="float:right;margin:auto auto;">
+		<a href="javascript: w=window.open('media/{{ post.screnshot }}'); w.print();">
+		<i class="fa fa-print" aria-hidden="true""></i></a></span></li>
+		{% endfor %}
+            <li class="sarkariprintlight-grey sarkariprintpadding-24">
+               <button class="sarkariprintbutton sarkariprintwhite sarkariprintpadding-large"><a href="{% url 'important' %}">View More</a></button>
+		</li>
+          </ul>
+        </div>
+      </div>     
+   </div>
+  </div>
+
+  <div class="sarkariprintcontainer sarkariprintlight-grey sarkariprintpadding-32 sarkariprintpadding-large" id="contact">
+    <div class="sarkariprintcontent" style="max-width:600px">
+      <h4 class="sarkariprintcenter"><b>Contact Me</b></h4>
+      <p>Do you want me to photograph you? Fill out the form and fill me in with the details :) I love meeting new people!</p>
+      <form action="/action_page.php" target="_blank">
+        <div class="sarkariprintsection">
+          <label>Name</label>
+          <input class="sarkariprintinput sarkariprintborder" type="text" name="Name" required>
+        </div>
+        <div class="sarkariprintsection">
+          <label>Email</label>
+          <input class="sarkariprintinput sarkariprintborder" type="text" name="Email" required>
+        </div>
+        <div class="sarkariprintsection">
+          <label>Message</label>
+          <input class="sarkariprintinput sarkariprintborder" type="text" name="Message" required>
+        </div>
+        <button type="submit" class="sarkariprintbutton sarkariprintblock sarkariprintblack sarkariprintmargin-bottom">Send Message</button>
+      </form>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="sarkariprintcontainer sarkariprintpadding-32 sarkariprintgrey">  
+  <div class="sarkariprintblack sarkariprintcenter sarkariprintpadding-24">Powered by <a href="https://www.sarkariprint.com/" title="Sarkari Print" target="_blank" class="sarkariprinthover-opacity">Sarkari Print</a></div>
+  </footer> 
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<title>Sarkari Print</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'main.css'  %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<body class="sarkariprintlight-grey">
+<div class="sarkariprintrow-padding" style="margin:0 -16px">
+     <div class="sarkariprinthalf">		
+	 <a href="{% url 'result' %}">
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Result</li>		
+          </ul>
+		   </a>
+        </div>
+       		
+        <div class="sarkariprinthalf">	
+		<a href="{% url 'admit' %}">		
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Admit Card</li>          
+          </ul>
+		  </a>
+        </div>
+		   
+			<div class="sarkariprinthalf  sarkariprintmargin-bottom">
+ <a href="{% url 'post_list' %}">			
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Latest Jobs</li>  
+            </ul>
+			</a>
+        </div>		
+      </div>
+<div class="sarkariprintrow-padding" style="margin:0 -16px">
+        <div class="sarkariprinthalf">		
+		<a href="{% url 'important' %}">
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Important Form</li>
+		</a>
+          </ul>
+        </div>        
+        <div class="sarkariprinthalf">	
+          <a href="{% url 'admission' %}">		
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Admission</li>  
+             </ul>
+			 </a>
+        </div>
+		        <div class="sarkariprinthalf  sarkariprintmargin-bottom">	
+ <a href="{% url 'answer' %}">					
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Syllabus/Answer Key</li>          
+          </ul>
+		  </a>
+        </div>
+      </div>
+	
+
+<div class="sarkariprintmain sarkariprintcontent" style="max-width:1600px;">
+  <div class="sarkariprintcontainer sarkariprintdark-grey sarkariprintcenter sarkariprinttext-light-grey sarkariprintpadding-32" id="about"> 
+    <div class="sarkariprintcontent sarkariprintjustify" ">
+<center><h2>Sarkari Print</h2></center>
+      <hr class="sarkariprintopacity">  
+      <div class="sarkariprintrow-padding" style="margin:0 -16px">    
+          <div class="sarkariprinthalf" style="width: 80% !important;">		
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Answer Key / Syllabus</li>  
+        {% for answer in answer %}
+		<li class="sarkariprintpadding-16"><a href="{% url 'answer_detail' pk=answer.pk %}">{{ answer.answeredetails }}</a></li>
+		{% endfor %}           
+          </ul>
+        </div>
+<div id="hmenu">
+<ul class="hmenu" style="text-align:center;">
+<li>
+<a href="{% url 'home' %}" class="parent">
+<span>Home</span>
+</a>
+</li>
+<li>
+<a href="{% url 'result' %}" class="parent">
+<span>Result</span>
+</a>
+</li>
+<li>
+<a href="{% url 'admit' %}" class="parent">
+<span>Admit Card</span>
+</a>
+</li>
+<li>
+<a href="{% url 'post_list' %}" class="parent">
+<span>Latest Jobs</span>
+</a>
+</li>
+<li>
+<a href="{% url  'answer' %}" class="parent">
+<span>Syllabus/Answer Key</span>
+</a>
+</li>
+</ul>
+</div>
+   </div>     
+   </div>   
+  </div>
+  <footer class="sarkariprintcontainer sarkariprintpadding-32 sarkariprintgrey">  
+  <div class="sarkariprintblack sarkariprintcenter sarkariprintpadding-24">Powered by <a href="https://www.sarkariprint.com" title="sarkariprint" target="_blank" class="sarkariprinthover-opacity">Sarkari Print</a></div>
+  </footer>
+</div>
+</body>
+</html>

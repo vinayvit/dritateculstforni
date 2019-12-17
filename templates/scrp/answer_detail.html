@@ -1,0 +1,388 @@
+<html>{% load static %}
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{{ posts.job }}</title>
+<meta name="description" content="DRDO ITR Apply Online 2019 for 116 Graduate and Technician Apprentice Recruitment 2019. Check Eligibility, Age Limit, How to Apply.">
+<link href="{% static 'main.css' %}" media="screen" rel="stylesheet" type="text/css"></head>
+<body style="background-color:#FFFFFF">
+<div class="sarkariprintrow-padding" style="margin:0 -16px">
+     <div class="sarkariprinthalf">		
+	 <a href="{% url 'result' %}">
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Result</li>		
+          </ul>
+		   </a>
+        </div>
+       		
+        <div class="sarkariprinthalf">	
+		<a href="{% url 'admit' %}">		
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Admit Card</li>          
+          </ul>
+		  </a>
+        </div>
+		   
+			<div class="sarkariprinthalf  sarkariprintmargin-bottom">
+ <a href="{% url 'post_list' %}">			
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Latest Jobs</li>  
+            </ul>
+			</a>
+        </div>		
+      </div>
+<div class="sarkariprintrow-padding" style="margin:0 -16px">
+        <div class="sarkariprinthalf">		
+		<a href="{% url 'important' %}">
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Important Form</li>
+		</a>
+          </ul>
+        </div>        
+        <div class="sarkariprinthalf">	
+          <a href="{% url 'admission' %}">		
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Admission</li>  
+             </ul>
+			 </a>
+        </div>
+		        <div class="sarkariprinthalf  sarkariprintmargin-bottom">	
+ <a href="{% url 'answer' %}">					
+          <ul class="sarkariprintul sarkariprintwhite sarkariprintcenter">
+            <li class="sarkariprintblack sarkariprintxlarge sarkariprintpadding-32">Syllabus/Answer Key</li>          
+          </ul>
+		  </a>
+        </div>
+      </div>
+	
+
+
+<div align="center">
+<div style="height:auto; width:1000px; margin:0">
+<div id="header" style="cursor: pointer;">
+<div id="head-title">
+<font size="+4">SARKARI PRINT</font>
+<hr>
+</div>
+<div id="hmenu">
+<ul class="hmenu">
+<li>
+<a href="{% url 'home' %}" class="parent">
+<span>Home</span>
+</a>
+</li>
+<li>
+<a href="{% url 'result' %}" class="parent">
+<span>Result</span>
+</a>
+</li>
+<li>
+<a href="{% url 'admit' %}" class="parent">
+<span>Admit Card</span>
+</a>
+</li>
+<li>
+<a href="{% url 'post_list' %}" class="parent">
+<span>Latest Jobs</span>
+</a>
+</li>
+<li>
+<a href="{% url  'answer' %}" class="parent">
+<span>Syllabus/Answer Key</span>
+</a>
+</li>
+
+
+</ul>
+</div>
+</div>
+<table width="800" border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<tr>
+<td valign="top" align="left" style="font-weight:bold; color:#ff9800" width="196">
+<p align="center"><b>Name of posts:</b></p>
+</td>
+<td colspan="2" valign="top" width="95" align="left" width="259">
+<p align="center">{{ posts.job }}</p>
+</td>
+<td colspan="5" rowspan="2" valign="top" width="326">
+<p align="center" style="padding-top: 32px;"><span style="color:blue;font-size:1.5em"><b><a href="{{ posts.applylink }}">Apply Online HERE</a></b></span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" align="left" style="font-weight:bold; color:#ff9800" width="196">
+<p align="center"><b>Short Information :</b></p>
+</td>
+<td colspan="2" valign="top" width="95" align="left" width="259">
+<p align="center">{{ posts.jobtitle }}</p>
+</td>
+</tr>
+<tr>
+<td valign="top" align="left" style="font-weight:bold; color:#ff9800" width="196">
+<p align="center"><b>Name of posts:</b></p>
+</td>
+<td colspan="2" valign="top" width="95" align="left" width="259">
+<p align="center">{{ posts.job }}</p>
+</td>
+</tr>
+<td colspan="4" valign="top" width="338">
+<h2 align="center"><span style="color: #ff9800;"><b>Important Dates</b></span><b></b></h2>
+<li>Application Begin<b> : {{ posts.startdate }}</b></li>
+<li>Last Date for Apply Online<b> :<span style="color: #ff0000;"> {{ posts.lastdate }}</span></b></li>
+<li>Fee Payment Last Date <b>: {{ posts.feedate }}</b></li>
+<li>Exam Date : <b>{{ posts.examdate }}</b></li>
+</td>
+<td colspan="4" valign="top" width="278">
+<h4 align="center"><span style="color: #ff9800;"><b>Application Fee</b></span><b></b></h4>
+<li>General / OBC : <b>{{ posts.generalfee }}/-</b></li>
+<li>SC / ST / PH : <b>{{ posts.obcfee }}/- </b></li>
+<li>All Category Female : <b>{{ posts.girlfee }}/- </b></li>
+<li>Ex-Army Fess : <b>{{ posts.exarmyfee }}/- </b></li>
+<li>Handy-Cap Fees : <b>{{ posts.handycapfee }}/- </b></li>
+</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td colspan="6" valign="top" width="369">
+<h1 align="center"><span style="color: #009688;"><b>Apply Online</b></span><b></b></h1>
+</td>
+<td colspan="2" valign="top" width="247">
+<h1 align="center"><b><a href="{{ posts.applylink }}">Click Here</a></b></h1>
+</td>
+</tr>
+<tr>
+<td colspan="6" valign="top" width="369">
+<h1 align="center"><span style="color: #009688;"><b>Apply Online Server 2</b></span><b></b></h1>
+</td>
+<td colspan="2" valign="top" width="247">
+<h1 align="center"><b><a href="{{ posts.applylink2 }}">Click Here</a></b></h1>
+</td>
+</tr>
+<tr>
+<td colspan="6" valign="top" width="369">
+<h1 align="center"><b><span style="color: #009688;">Login to Complete Form</span>
+</b><b></b></h1>
+</td>
+<td colspan="2" valign="top" width="247">
+<p align="center"><b>Server1</b> : <a href="{{ posts.Loginlink }}">Link One</a>  <b>Server2</b> : <a href="{{ posts.loginlink }}">Link Two</a></b></p>
+</td>
+</tr>
+<tr>
+<td colspan="6" valign="top" width="369">
+<h1 align="center"><span style="color: #009688;"><b>Download Notification</b></span><b></b></h1>
+</td>
+<td colspan="2" valign="top" width="247">
+<h1 align="center"><a href="{{ posts.Examnotice }}" target="_blank"><b>Click Here</b></a><b></b></h1>
+</td>
+</tr>
+<tr>
+<td colspan="6" valign="top" width="369">
+<h1 align="center"><span style="color: #009688;"><b>Official Website</b></span><b></b></h1>
+</td>
+<td colspan="2" valign="top" width="247">
+<h1 align="center"><a href="{{ posts.Officialwebsite }}" target="_blank"><b>Click Here</b></a><b></b></h1>
+</td>
+</tr>
+<tr>
+<td colspan="8" valign="top" width="616">
+<h2 align="center"><span style="color: #ff9800;"><b>Vacancy Details <span style="color: #009688;"><u>Total : {{ posts.post1vacncy }}<u></span></b></span><b></b></h2>
+</td>
+</tr>
+<tr>
+<td valign="top" width="196">
+<p align="center"><b>Job Name</b></p>
+</td>
+<td colspan="2" valign="top" width="95">
+<p align="center"><b>Total posts</b></p>
+</td>
+<td colspan="5" valign="top" width="326">
+<p align="center"><b>Eligibility</b></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="196">
+<p align="center">{{ posts.post1 }}</p>
+</td>
+<td colspan="2" valign="top" width="95">
+<p align="center">{{ posts.post1vacncy}}</p>
+</td>
+<td colspan="5" valign="top" width="326">
+<li>{{ posts.post1qulification }}</li>
+<li>{{ posts.post2qulification }}</li>
+</td>
+</tr>
+<tr>
+<td valign="top" width="196">
+<p align="center">{{ posts.post1 }}</p>
+</td>
+<td colspan="2" valign="top" width="95">
+<p align="center">{{ posts.post2vacncy}}</p>
+</td>
+<td colspan="5" valign="top" width="326">
+<li>{{ posts.post2qulification }}</li>
+<li>{{ posts.post2qulification2 }}</li>
+</td>
+</tr>
+<tr><!--
+<td colspan="8" valign="top" width="616">
+<h2 align="center"><span style="color: #009688;"><b>Trade Wise Vacancy Details</b></span></h2>
+</td>
+</tr>
+<tr>
+<td valign="top" width="196">
+<p align="center"><b>Apprentice Type</b></p>
+</td>
+<td colspan="4" valign="top" width="161">
+<p align="center"><b>Trade Name</b></p>
+</td>
+<td colspan="3" valign="top" width="259">
+<p align="center"><b>Total Vacancy</b></p>
+</td>
+</tr>
+<tr>
+<td rowspan="7" valign="top" width="196">
+<p align="center">Graduate Engineering Apprentice</p>
+</td>
+<td colspan="4" valign="top" width="161">
+<p align="center">Computer Science CS / IT</p>
+</td>
+<td colspan="3" valign="top" width="259">
+<p align="center">22</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="top" width="161">
+<p align="center">Electronics Engineering EE</p>
+</td>
+<td colspan="3" valign="top" width="259">
+<p align="center">25</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="top" width="161">
+<p align="center">Electrical Engineering EE</p>
+</td>
+<td colspan="3" valign="top" width="259">
+<p align="center">05</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="top" width="161">
+<p align="center">Mechanical Engineering ME</p>
+</td>
+<td colspan="3" valign="top" width="259">
+<p align="center">03</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="top" width="161">
+<p align="center">Civil Engineering CE</p>
+</td>
+<td colspan="3" valign="top" width="259">
+<p align="center">01</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="top" width="161">
+<p align="center">Aerospace Engineering AE</p>
+</td>
+<td colspan="3" valign="top" width="259">
+<p align="center">02</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="top" width="161">
+<p align="center">Library Science</p>
+</td>
+<td colspan="3" valign="top" width="259">
+<p align="center">02</p>
+</td>
+</tr>
+<tr>
+<td rowspan="5" valign="top" width="196">
+<p align="center"><b>Technician Diploma Apprentice</b></p>
+</td>
+<td colspan="4" valign="top" width="161">
+<p align="center">Diploma in Computer Science &amp; Engineering CS/ IT</p>
+</td>
+<td colspan="3" valign="top" width="259">
+<p align="center">23</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="top" width="161">
+<p align="center">Diploma in Electronics Engineering EE</p>
+</td>
+<td colspan="3" valign="top" width="259">
+<p align="center">23</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="top" width="161">
+<p align="center">Diploma in Electrical Engineering EE</p>
+</td>
+<td colspan="3" valign="top" width="259">
+<p align="center">05</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="top" width="161">
+<p align="center">Diploma in Mechanical Engineering ME</p>
+</td>
+<td colspan="3" valign="top" width="259">
+<p align="center">03</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="top" width="161">
+<p align="center">Diploma in Civil Engineering CE</p>
+</td>
+<td colspan="3" valign="top" width="259">
+<p align="center">02</p>
+</td>
+</tr> --!>
+<tr>
+<td colspan="8" valign="top" width="616">
+<h2 align="center"><span style="color: #009688;"><b>Interested Candidates Can Read the Full Notification Before Apply Online</b></span></h2>
+</td>
+</tr>
+<tr>
+<td colspan="8" valign="top" width="616">
+
+<h2 align="center"><span style="color: #ff9800;"><b>Download sarkariprint Official Mobile Apps</b></span></h2>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top" width="202">
+<p align="center"><a href="https://play.google.com/store/apps/details?id=com.app.app14f269771c01" target="_blank"><b>Android Apps</b></a><b></b></p>
+</td>
+<td colspan="5" valign="top" width="243">
+<p align="center"><a href="https://itunes.apple.com/us/app/sarkari-result/id1051363935?ls=1&amp;mt=8" target="_blank"><b>Apple IOS Apps</b></a><b></b></p>
+</td>
+<td valign="top" width="171">
+<p align="center"><a href="https://www.microsoft.com/en-us/store/p/sarkari-result/9nblggh6cm69" target="_blank"><b>Window Apps</b></a><b></b></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td>
+
+
+</td>
+</tr>
+</tbody></table>
+<div id="footer" align="center">
+
+<div id="footer" align="center">
+
+<div id="copy"> © Copyright 2019-2020 at WWW.SARKARIPRINT.COM
+<br>For Any Feedback in this website contact us sarkariprint@gmail.com<br><br></div><br>
+
+
+<div align="center" style="margin-bottom:10px"><font size="-1" color="#03a9f4"><b>Disclaimer : </b>The Examination Results/Marks distributed in this Website is just for the quick Information to the Examinees a doesn't to be a comprise to be a Legal Document. While the sum total of what endeavors have been made to make the Information accessible on this Website as Authentic as could reasonably be expected. We are not answerable for any Inadvertent Error that may have sneaked in the Examination Results/Marks being distributed in this Website nad for any misfortune to anyone or anything brought about by any Shortcoming, Defect or Inaccuracy of the Information on this Website.</font></div>
+</div>
+</div>
+
+</div></div></body></html>
